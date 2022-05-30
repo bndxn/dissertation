@@ -1,5 +1,5 @@
 
-# An Introduction to Deep Generative Modelling [Arxiv](https://arxiv.org/pdf/2103.05180.pdf). 
+# An Introduction to Deep Generative Modelling [Arxiv](https://arxiv.org/pdf/2103.05180.pdf) 
 
 ## Abstract: 
 
