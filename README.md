@@ -1,5 +1,17 @@
 # Dissertation
 
+This dissertation seeks to use satellite imagery to predict solar photovoltaic (PV) yield. 
+
+For example, here is a comparison of the satellite images for Devon and the solar PV yield from a site in Devon, both for 2021-06-01.  
+
+<p align="center">
+  <img src="images/system_6848_pv_yield.jpg">
+</p>
+
+<p align="center">
+  <img src="images/system_6848_sat_frames.jpg">
+</p>
+
 ## Data sources
 
 1. **uk_pv**: PV solar generation data from the UK. This dataset contains data from 1311 PV systems from 2018-01-01 to 2021-10-27. Originally from Sheffield Solar, aggregated by OCF and made available on HuggingFace [here](https://huggingface.co/datasets/openclimatefix/uk_pv).
@@ -8,9 +20,6 @@
   <img src="images/pv_sites.jpg">
 </p>
 
-<p align="center">
-  <img src="images/PV_yield_one_site.jpg">
-</p>
 
 2. **GSPs**: Geospatial boundaries associated with each of the Grid Supply Points on the GB transmission network. Provided by nationalgridESO [here](https://data.nationalgrideso.com/system/gis-boundaries-for-gb-grid-supply-points). 
 
@@ -28,7 +37,6 @@
 <p align="center">
   <img src="images/larger_devon_crop.jpg">
 </p>
-
 
 <p align="center">
   <img src="images/Sat_HRV_Devon.jpg">
