@@ -12,6 +12,13 @@ For example, here is a comparison of the satellite images for Devon and the sola
   <img src="images/system_6848_sat_frames.jpg">
 </p>
 
+And here are the results of a simple model predicting the PV yield given a satellite image of the area
+
+<p align="center">
+  <img src="images/first_test_predictions.jpg">
+</p>
+
+
 ## Data sources
 
 1. **uk_pv**: PV solar generation data from the UK. This dataset contains data from 1311 PV systems from 2018-01-01 to 2021-10-27. Originally from Sheffield Solar, aggregated by OCF and made available on HuggingFace [here](https://huggingface.co/datasets/openclimatefix/uk_pv).
