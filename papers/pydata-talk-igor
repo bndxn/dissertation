@@ -1,2 +1,15 @@
 ## Igor Gotlibovych from Octopus energy - https://www.youtube.com/watch?v=p6mKFs6HVlg
 
+# Context
+- On generation side, prediction from renewables is less predictable
+- Customers installing their own generation and using batteries
+- Octopus has time series data of usage from smart meters
+- 77K smart meters
+
+# How Octopus approaches time series forecasting
+- Lots of different approaches to time series forecasting, each from different communities
+- TSF (Time series forecasting)
+- Is it a regression problem? Yes, so can use scikit learn
+- latent variables?
+- octopus uses deep learning route as this scaled quite well
+- they open sourced some code https://github.com/octoenergy/timeserio
