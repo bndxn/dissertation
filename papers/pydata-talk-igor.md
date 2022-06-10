@@ -1,4 +1,4 @@
-## Igor Gotlibovych from Octopus energy - https://www.youtube.com/watch?v=p6mKFs6HVlg
+## Igor Gotlibovych from Octopus energy - [link](https://www.youtube.com/watch?v=p6mKFs6HVlg)
 #  Deep Learning and Time Series Forecasting for Smarter Energy
 
 ## Context
