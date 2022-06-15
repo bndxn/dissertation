@@ -1,2 +1,5 @@
 *.zarr
 /data
+/jena-climate
+/jena-climate/*
+jena-climate/*
