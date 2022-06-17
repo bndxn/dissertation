@@ -4,3 +4,6 @@
 /jena-climate/*
 jena-climate/*
 ./jena-climate/*
+/OCF_docs/CTRY*.*
+/OCF_docs/Countries*.zip
+/.ipynb_checkpoints/*
