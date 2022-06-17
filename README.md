@@ -12,10 +12,10 @@ For example, here is a comparison of the satellite images for Devon and the sola
   <img src="images/system_6848_sat_frames.jpg">
 </p>
 
-And here are the results of a simple model predicting the PV yield given a satellite image of the area
+And here are the results of a simple model predicting the PV yield given a satellite image of the area for that time period
 
 <p align="center">
-  <img src="images/first_test_predictions.jpg">
+  <img src="images/first_test_predictions_2.jpg">
 </p>
 
 
