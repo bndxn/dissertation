@@ -18,17 +18,17 @@ Full size image                   |   Area crop                | Smaller crop us
 
 I chose some PV sites in the area of the satellite image crop, in Devon, and used the PV readings from those locations from 2020 and 2021. I then matched this up with the satellite images. 
 
-[](images/uk_pv_devon.png)
+![](images/uk_pv_devon.png)
 
-[](images/uk_sat_devon.png). 
+![](images/uk_sat_devon.png). 
 
 I then had a look at the images and realised that a lot were dark 
 
-[](images/preprocessed_images.png)
+![](images/preprocessed_images.png)
 
 So I removed the ones where the solar altitude (the angle relative to the ground of the sun in the sky) was below 10 degrees - we can see that at least over short time scales solar altitude appears correlated with PV yield. 
 
-[](images/altitude_pv_yield_two_weeks.png)
+![](images/altitude_pv_yield_two_weeks.png)
 
 ## Models
 
@@ -89,20 +89,22 @@ def convlstm_padded(steps_forward, x_train_sat_padded, x_train_pv_inputs_padded,
 
 I found that the ConvLSMTs outperform CNNs over longer timescales, which makes sense but has been challenged by some of the literature, e.g. [Bai et al, 2018](https://arxiv.org/abs/1803.01271). 
 
-[](images/results.png)
+![](images/results.png)
 
 ## Interpretability
 
 I wondered what the neural networks are actually learning - so I visualised the activations of a neural network over a particularly bright image. Here's the first layer of 16 filters in a CNN. 
 
-[](images/case_a_1.png)
+![](images/case_a_1.png)
 
 and the second
 
-[](images/case_a_2.png)
+![](images/case_a_2.png)
 
 and third
 
-[](images/case_a_2.png)
+![](images/case_a_2.png)
 
-Some of the first layer appear to be recognising land, or sea, or maybe the edges. Then the second layer possibly builds up more general shapes, and the third appears to have highest activation around long edges or coastlines. I wondered whether what I was getting was a model which just recognised Devon - because a clear image in relief would indicate a clear sky and not much PV, with high relief between land and sea indicating the sun is high in the sky. A next step is to test on bits of land with no coastlines/sea and to see what happens!
+Some of the first layer appear to be recognising land, or sea, or maybe the edges. Then the second layer possibly builds up more general shapes, and the third appears to have highest activation around long edges or coastlines. 
+
+I wondered whether what I was getting was a model which just recognised Devon - because a clear image in relief would indicate a clear sky and not much PV, with high relief between land and sea indicating the sun is high in the sky. A next step is to test on bits of land with no coastlines/sea and to see what happens!
