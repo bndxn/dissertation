@@ -18,9 +18,13 @@ Full size image                   |   Area crop                | Smaller crop us
 
 I chose some PV sites in the area of the satellite image crop, in Devon, and used the PV readings from those locations from 2020 and 2021. I then matched this up with the satellite images. 
 
-![](images/uk_pv_devon.png)
+<p align="center">
+  <img src="images/uk_pv_devon.png">
+</p>
 
-![](images/uk_sat_devon.png). 
+<p align="center">
+  <img src="images/uk_sat_devon.png">
+</p>
 
 I then had a look at the images and realised that a lot were dark 
 
@@ -99,17 +103,23 @@ It was interesting to look at some of the predictions - shown in red. On the ima
 
 ## Interpretability
 
-I wondered what the neural networks are actually learning - so I visualised the activations of a neural network over a particularly bright image. Here's the first layer of 16 filters in a CNN. 
+I wondered what the neural networks are actually learning - so I visualised the activations of a neural network over a particularly bright image. The three images below show the three layers of convolutions. Each image within each grid is the activations from a single filter. 
 
-![](images/case_a_1.png)
+<p align="center">
+  <img src="images/case_a_1.png">
+</p>
 
-and the second
 
-![](images/case_a_2.png)
+<p align="center">
+  <img src="images/case_a_2.png">
+</p>
 
-and third
 
-![](images/case_a_3.png)
+<p align="center">
+  <img src="images/case_a_3.png">
+</p>
+
+
 
 Some of the first layer appear to be recognising land, or sea, or maybe the edges. Then the second layer possibly builds up more general shapes, and the third appears to have highest activation around long edges or coastlines. 
 
