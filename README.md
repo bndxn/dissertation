@@ -91,6 +91,12 @@ I found that the ConvLSMTs outperform CNNs over longer timescales, which makes s
 
 ![](images/results.png)
 
+## Predictions
+
+It was interesting to look at some of the predictions - shown in red. On the image on the left, it's good that they seem to encode that the view is getting brighter or darker - as they trend up or down. I think they probably tend to revert to the mean - on the sunnier day in the middle, the network keeps wanting to trend down. 
+
+![](images/convlstm_predictions.png)
+
 ## Interpretability
 
 I wondered what the neural networks are actually learning - so I visualised the activations of a neural network over a particularly bright image. Here's the first layer of 16 filters in a CNN. 
