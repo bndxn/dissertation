@@ -109,7 +109,7 @@ and the second
 
 and third
 
-![](images/case_a_2.png)
+![](images/case_a_3.png)
 
 Some of the first layer appear to be recognising land, or sea, or maybe the edges. Then the second layer possibly builds up more general shapes, and the third appears to have highest activation around long edges or coastlines. 
 
