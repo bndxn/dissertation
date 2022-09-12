@@ -1,30 +1,17 @@
 # Dissertation
 
-This dissertation seeks to use satellite imagery to predict solar photovoltaic (PV) yield - the energy from solar panels, using satellite images. I combine two data sources: PV energy readings - from around 1300 sites shown below, and satellite images. 
+![](images/sat_images_for_site.png)
 
-<p align="center">
-  <img src="images/pv_sites.jpg">
-</p>
+This dissertation seeks to use satellite imagery to predict solar photovoltaic (PV) yield - the energy from solar panels, using satellite images. I combine two data sources: satellite images and PV energy readings. 
 
-
-The satellite images are from EUMETSAT, the EUMETSAT Spinning Enhanced Visible and InfraRed Imager (SEVIRI) rapid scanning service (RSS) takes an image of the northern third of the Meteosat disc every five minutes. The original dataset was around 100GB, so cropped to only include Devon (100x100x170K) dataset to make training easier. 
-
-
-Full size image                   |   Area crop                | Smaller crop used in training
-:---------------------------------:|:-------------------------:|:------------------------------------:|
-![](images/Sat_HRV_full_plot.jpg)  | ![](images/larger_devon_crop.jpg) | ![](images/Sat_HRV_Devon.jpg)
-
-## Preprocessing
+The satellite images are from EUMETSAT, a satellite which takes an image of the northern third of the Meteosat disc every five minutes. The original dataset was around 100GB, so cropped to only include Devon (100x100x170K) dataset to make training easier. 
 
 I chose some PV sites in the area of the satellite image crop, in Devon, and used the PV readings from those locations from 2020 and 2021. I then matched this up with the satellite images. 
 
 <p align="center">
-  <img src="images/uk_pv_devon.png">
+  <img src="images/devon_sat_and_pv_side_by_side.png">
 </p>
 
-<p align="center">
-  <img src="images/uk_sat_devon.png">
-</p>
 
 I then had a look at the images and realised that a lot were dark 
 
@@ -46,7 +33,7 @@ def convlstm_padded(steps_forward, x_train_sat_padded, x_train_pv_inputs_padded,
   # Hyperparameters
 
   learning_rate = learning_rate
-  dropout_rate = dropout_rate 
+  dropout_rate = 0.1 
   
   # ConvLSTM model 
 
@@ -55,8 +42,6 @@ def convlstm_padded(steps_forward, x_train_sat_padded, x_train_pv_inputs_padded,
 
   inp2 = layers.Input(shape=(x_train_pv_inputs_padded.shape[1:]), name='x_pv_input')
   y = layers.Masking(mask_value=-1, input_shape=(24, 1))(inp2)
-
-  dropout_rate = 0.1
 
   x = layers.ConvLSTM2D(filters=32, kernel_size=(3, 3), padding='same', recurrent_dropout=dropout_rate, return_sequences=True, activation="relu")(x)
   x = layers.MaxPooling3D(pool_size=(3,3,3))(x)
@@ -93,7 +78,10 @@ def convlstm_padded(steps_forward, x_train_sat_padded, x_train_pv_inputs_padded,
 
 I found that the ConvLSMTs outperform CNNs over longer timescales, which makes sense but has been challenged by some of the literature, e.g. [Bai et al, 2018](https://arxiv.org/abs/1803.01271). 
 
-![](images/results.png)
+
+<p align="center">
+  <img src="images/results2.png">
+</p>
 
 ## Predictions
 
